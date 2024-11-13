@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Caso Clínico</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .form-container {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        .required::after {
+            content: "*";
+            color: red;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Crear Nuevo Caso Clínico</h2>
+        <div class="form-container">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                
+                <div class="form-group">
+                    {{ form.name.label(class="required") }}
+                    {{ form.name(class="form-control") }}
+                    {% for error in form.name.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.age.label(class="required") }}
+                    {{ form.age(class="form-control") }}
+                    {% for error in form.age.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.gender.label(class="required") }}
+                    {{ form.gender(class="form-control") }}
+                    {% for error in form.gender.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.event_location.label(class="required") }}
+                    {{ form.event_location(class="form-control") }}
+                    {% for error in form.event_location.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.traumatic_event.label(class="required") }}
+                    {{ form.traumatic_event(class="form-control") }}
+                    {% for error in form.traumatic_event.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.scenario.label(class="required") }}
+                    {{ form.scenario(class="form-control") }}
+                    {% for error in form.scenario.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <h4>Rasgos de Personalidad (0-10)</h4>
+                
+                <div class="form-group">
+                    {{ form.openness.label }}
+                    {{ form.openness(class="form-control") }}
+                    {% for error in form.openness.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.conscientiousness.label }}
+                    {{ form.conscientiousness(class="form-control") }}
+                    {% for error in form.conscientiousness.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.extraversion.label }}
+                    {{ form.extraversion(class="form-control") }}
+                    {% for error in form.extraversion.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.agreeableness.label }}
+                    {{ form.agreeableness(class="form-control") }}
+                    {% for error in form.agreeableness.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.neuroticism.label }}
+                    {{ form.neuroticism(class="form-control") }}
+                    {% for error in form.neuroticism.errors %}
+                        <span class="text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                
+                <div class="form-group">
+                    {{ form.additional_features.label }}
+                    {{ form.additional_features(class="form-control", rows="3") }}
+                </div>
+                
+                <div class="form-group form-check">
+                    {{ form.improvise(class="form-check-input") }}
+                    {{ form.improvise.label(class="form-check-label") }}
+                </div>
+                
+                <button type="submit" class="btn btn-success">{{ form.submit.label.text }}</button>
+                <a href="{{ url_for('main.welcome') }}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+# Entorno virtual
+env/
+venv/
+
+# Archivos de Python compilados
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de configuración
+.env
+
+# Bases de datos
+*.sqlite3
+*.db
+
+# Archivos de logs
+logs/
+
+# Otros
+*.DS_Store
+
+# IDEs y Editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

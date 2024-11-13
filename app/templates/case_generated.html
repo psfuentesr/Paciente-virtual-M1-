@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Caso Clínico Generado</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .case-container {
+            padding: 30px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Caso Clínico Generado</h2>
+        <div class="case-container">
+            <p>{{ case.narrative }}</p>
+            <a href="{{ url_for('main.create_case') }}" class="btn btn-primary">Crear Otro Caso Clínico</a>
+            <a href="{{ url_for('main.welcome') }}" class="btn btn-secondary">Volver a Inicio</a>
+        </div>
+    </div>
+</body>
+</html>
